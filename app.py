@@ -16,6 +16,11 @@ def home():
 
 	return jsonify({'message': 'Welcome to API Home'}), 200, {'Content-Type': 'application/json'}
 
+@app.route('/get)
+def home1():
+
+	return jsonify({'message': 'Welcome to API Get'}), 200, {'Content-Type': 'application/json'}
+
 
 # Run App:
 
