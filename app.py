@@ -2,6 +2,7 @@
 
 from flask import Flask, jsonify
 from flask_cors import CORS
+import os
 
 
 # Create App Instance:
@@ -14,7 +15,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
 
-	return jsonify({'message': 'Welcome to API Home'}), 200, {'Content-Type': 'application/json'}
+	postgresdb_url = os.environ('DATABASE_URL', None)
+
+	return jsonify({'message': 'Welcome to API Home', 'postgresdb_url': postgresdb_url}), 200, {'Content-Type': 'application/json'}
 
 @app.route('/get')
 def home1():
