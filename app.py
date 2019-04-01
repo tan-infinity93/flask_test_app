@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
 
-	postgresdb_url = os.environ('DATABASE_URL', None)
+	postgresdb_url = os.environ.get('DATABASE_URL', None)
 
 	return jsonify({'message': 'Welcome to API Home', 'postgresdb_url': postgresdb_url}), 200, {'Content-Type': 'application/json'}
 
